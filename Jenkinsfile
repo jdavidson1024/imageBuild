@@ -11,7 +11,7 @@ deleteDir()
        }
 
       stage ('Build Image'){
-        sh '/usr/bin/packer.1.6.0 build --color=false -var-file=build_version-7.4.json -only=CentOS enterprise_linux.json'
+        sh '/usr/bin/packer.1.6.0 build --color=false -var-file=build_version-7.4.json -only=CentOS enterprise_linux2.json'
       }
 
       stage ('Package Image(s)')
@@ -31,7 +31,7 @@ deleteDir()
           stage ('Upload Image(s) to Nexus')
           {
             //sh 'curl -k -v -u $nexusUSERNAME:$nexusPASSWORD --upload-file $IMAGE_OUTPUT_DIR/output-vmware-iso-rhel/RHEL-7-4.ova https://nexus.int.sentania.net/repository/labRepo/lab/enterpriseLinux/RHEL-7-4-$BUILD_TAG.ova'
-            sh 'curl -k -v -u $nexusUSERNAME:$nexusPASSWORD --upload-file $IMAGE_OUTPUT_DIR/output-vmware-iso-centos/CentOS-8-2.ova https://nexus.int.sentania.net/repository/labRepo/lab/images/enterpriseLinux/CentOS-8-2-$BUILD_TAG.ova'
+            sh 'curl -k -v -u $nexusUSERNAME:$nexusPASSWORD --upload-file $IMAGE_OUTPUT_DIR/output-vmware-iso-centos/CentOS-8-2.ova http://192.168.11.136:8081/repository/labRepo/LinuxBuilds/Iso/CentOS-8-2-$BUILD_TAG.ova'
           }
           stage ('Upload Image(s) to vsphere')
           {
