@@ -1,0 +1,8 @@
+{
+    "os_version": "8.2",
+    "image_build_version": "0.3",
+    "packer_ssh_username":"jason",
+    "packer_ssh_password":"jason",
+    "centos_iso":"CentOS-8.2.2004-x86_64-minimal.iso",
+    "centos_iso_checksum":"47ab14778c823acae2ee6d365d76a9aed3f95bb8d0add23a06536b58bb5293c0",
+    "centos_nexus_url": "http://192.168.11.136:8081/repository/labRepo/LinuxBuilds/Iso/CentOS-8.2.2004-x86_64-minimal.iso"}
